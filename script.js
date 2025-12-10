@@ -21,11 +21,36 @@ const img = document.getElementById("changeImage");
 
 const btn = document.getElementById("changeButton");
 
+// creo variabile
+
+let turnOn = false;
+
 //cliccando il bottone cambio immagine
+
+//esempio in cui si accende solo
+
+
+// btn.addEventListener("click",
+//     function() {
+//         //cambio sorgente dell'immagine
+//         img.src ="./img/yellow_lamp.png"
+//     }
+// )
+
+//per accenderla e spegnarla
 
 btn.addEventListener("click",
     function() {
-        //cambio sorgente dell'immagine
-        img.src ="./img/yellow_lamp.png"
+        //creo il ciclo per accenderla e spegnerla continuamente
+        if (turnOn === false) {
+            img.src = "./img/yellow_lamp.png"
+            btn.textContent = "spegnimi";
+            turnOn =true;
+        } // quando è spenta
+        else {
+            img.src = "./img/white_lamp.png";
+            btn.textContent = "consumiamo un pò";
+            turnOn= false;
+        }
     }
 )
